@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <h1 align="center">Edit User</h1>
+        <nav class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="addUser">Add User</a></li>
+            <li><a href="/shop">Shop</a></li>
+        </nav>
+
+
+<br>
+<br>
+
+<form th:action="@{/update}" method="post" style="text-align: center;" th:object="${user}" autocomplete="off">
+    <input type="hidden" th:value="${user.id}" name="id">
+    <table class="table">
+        <div>
+            <label>ID</label>
+            <div>
+                <input type="text" name="id" placeholder="Enter Your id" th:value="${user.id}" required>
+            </div>
+        </div>
+        <div>
+            <label>NAME</label>
+        </div>
+        <div>
+            <input type="text" name="name" placeholder="Enter Your name" th:value="${user.name}" required>
+        </div>
+        <div>
+            <label>EMAIL</label>
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Enter Your email" th:value="${user.email}" required>
+        </div>
+        <div>
+            <label>Technology</label>
+        </div>
+        <div>
+            <input type="text" name="tech" placeholder="Enter Your technology" th:value="${user.tech}" required>
+        </div>
+    </table>
+    <br>
+    <div class="btn">
+        <input type="submit" name="submit" value="UPDATE" onclick="update()">
+    </div>
+</form>
+
+</body>
+<script type="text/javascript" src="functions.js"></script>
+</html>

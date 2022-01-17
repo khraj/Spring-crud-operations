@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <h1 align="center">Welcome User Have A Nice Day</h1>
+  <nav class="navbar">
+    <li><a href="/">Home</a></li>
+    <li><a href="addUser">Add User</a></li>
+    <li><a href="/shop">Shop</a></li>
+  </nav>
+
+<br>
+<br>
+  <table border="2" class="table">
+    <caption>User Details</caption>
+    <thead>
+      <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">TECHNOLOGY</th>
+          <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user: ${user}">
+            <th th:text="${user.id}">1</th>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.tech}"></td>
+            <td>
+                <a th:href="@{/edit/{id}(id=${user.id})}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{/delete/{id}(id=${user.id})}" class="delete" style="color:red" data-confirm="Are you want to delete this item..?">Delete</a>
+            </td>
+        </tr>
+
+    </tbody>
+  </table>
+
+</body>
+<script type="text/javascript" src="style.js"></script>
+</html>
