@@ -52,7 +52,10 @@ th,td{
 table{
 	border-spacing: 20px;
 }
-
+tr:hover{
+	transition: .3s;
+	color: #e9967a;
+}
 td,tr{
 	background-color: #f0ffff;
 }

@@ -2,6 +2,8 @@ package com.user.application.service;
 
 import com.user.application.entity.User;
 import com.user.application.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +13,8 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 	
     @Autowired
     private UserRepository userRepository;
@@ -28,6 +32,7 @@ public class UserService {
         if (user.isPresent()){
             return user.get();
         }
+        logger.error("error 404");
         return null;
     }
 
