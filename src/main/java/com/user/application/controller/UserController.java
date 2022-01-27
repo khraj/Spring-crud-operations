@@ -27,7 +27,6 @@ public class UserController {
         List<User> user= userService.getUsers();
         model.addAttribute("user",user);
         logger.info("All Users are displayed in Page...!");
-
         return "index";
     }
 
