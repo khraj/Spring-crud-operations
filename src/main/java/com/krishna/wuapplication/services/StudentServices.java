@@ -22,7 +22,6 @@ public class StudentServices {
         return null;
     }
 
-
     public void addStudent(Student student) {
         studentRepository.save(student);
     }

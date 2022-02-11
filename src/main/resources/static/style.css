@@ -60,3 +60,6 @@ tr:hover{
 td,tr{
 	background-color: #f0ffff;
 }
+.roles{
+    text-transform: uppercase;
+}

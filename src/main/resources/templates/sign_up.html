@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http:/www.thymeleaf.com">
 <head>
     <meta charset="UTF-8">
-    <title>Register Student</title>
+    <title>Add Student</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-    <H2>Register Student</H2>
+<h1 align="center">Sign Up</h1>
+<nav class="navbar">
+    <li><a href="/">Home</a></li>
+</nav>
+<br>
+<br>
 
-    <form>
+<form th:action="@{/sign_up}" method="post"; style="text-align: center;" autocomplete="off">
+    <table class="table">
         <div>
-            <label>Name * :</label>
-            <input type="text" placeholder="Enter Your Name" required>
+            <label>USER ID</label>
+            <div>
+                <input type="text" name="userId" placeholder="Enter Your UserID" required>
+            </div>
         </div>
         <div>
-            <label>UserName * :</label>
-            <input type="text" placeholder="Enter Your Username" required>
+            <label>User Name</label>
         </div>
         <div>
-            <label>Password * :</label>
-            <input type="text" placeholder="Enter Your Password" required>
+            <input type="text" name="username" placeholder="Enter Your username" required>
         </div>
-
         <div>
-            <input type="submit" value="submit">
+            <label>Password</label>
         </div>
-
-    </form>
-
+        <div>
+            <input type="text" name="password" placeholder="Enter Your password" required>
+        </div>
+        <div>
+            <label>Email</label>
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Enter Your email" required>
+        </div>
+    </table>
+    <br>
+    <div class="btn">
+        <input type="submit" name="submit" value="SignUp" onclick="signup()">
+    </div>
+</form>
 </body>
+<script type="text/javascript" src="/functions.js"></script>
+
 </html>
