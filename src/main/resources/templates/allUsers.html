@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org"
+      xmlns:sec="https://thymeleaf.org/thymleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1 align="center">Welcome Admin</h1>
+<nav class="navbar">
+    <li><a href="/">Home</a></li>
+</nav>
+
+<br>
+<br>
+
+<table border="1" class="table">
+    <caption>Users Details</caption>
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">USERNAME</th>
+        <th scope="col">PASSWORD</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">ROLE</th>
+        <th scope="col">ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="users: ${users}">
+        <td th:text="${users.userId}">1</td>
+        <td th:text="${users.username}"></td>
+        <td th:text="${users.password}"></td>
+        <td th:text="${users.email}"></td>
+        <td th:text="${users.roles}"></td>
+        <td>
+            <a th:href="@{/admin/edit/{id}(id=${users.userId})}">Edit</a>
+            &nbsp;&nbsp;&nbsp;
+            <a th:href="@{/admin/delete/{id}(id=${users.userId})}" class="delete" style="color:red" data-confirm="Do you want to delete this item..?" onclick="delete()">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script type="text/javascript" src="/functions.js"></script>
+
+</html>

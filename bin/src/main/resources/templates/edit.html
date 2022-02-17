@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1 align="center">Adding User</h1>
+<nav class="navbar">
+    <li><a href="/">Home</a></li>
+    <li><a href="/addStudent">Add User</a></li>
+</nav>
+<br>
+<br>
+
+<form th:action="@{/update}" method="post"; style="text-align: center;" autocomplete="off">
+    <input type="hidden" th:value="${student.id}" name="id">
+    <table class="table">
+        <div>
+            <label>ID</label>
+            <div>
+                <input type="text" name="id" placeholder="Enter Your id" th:value="${student.id}" required>
+            </div>
+        </div>
+        <div>
+            <label>NAME</label>
+        </div>
+        <div>
+            <input type="text" name="name" placeholder="Enter Your name" th:value="${student.name}" required>
+        </div>
+        <div>
+            <label>EMAIL</label>
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Enter Your email" th:value="${student.email}" required>
+        </div>
+        <div>
+            <label>Technology</label>
+        </div>
+        <div>
+            <input type="text" name="technology" placeholder="Enter Your technology" th:value="${student.technology}" required>
+        </div>
+    </table>
+    <br>
+    <div class="btn">
+        <input type="submit" name="submit" value="Update" onclick="update()">
+    </div>
+</form>
+</body>
+<script type="text/javascript" src="/functions.js"></script>
+</html>

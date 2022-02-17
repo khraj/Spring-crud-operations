@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1 align="center">Edit User</h1>
+<nav class="navbar">
+    <li><a href="/">Home</a></li>
+    <li><a href="/admin/allUsers">AllUsers</a></li>
+
+</nav>
+<br>
+<br>
+
+<form th:action="@{/admin/update}" method="post"; style="text-align: center;" autocomplete="off">
+    <input type="hidden" th:value="${users.userId}" name="userId">
+    <table class="table">
+        <div>
+            <label>USER ID</label>
+            <div>
+                <input type="text" name="userId" placeholder="Enter Your UserID" th:value="${users.userId}" required >
+            </div>
+        </div>
+        <div>
+            <label>User Name</label>
+        </div>
+        <div>
+            <input type="text" name="username" placeholder="Enter Your username" th:value="${users.username}" required>
+        </div>
+        <div>
+            <label>Password</label>
+        </div>
+        <div>
+            <input type="text" name="password" placeholder="Enter Your password" th:value="${users.password}" required>
+        </div>
+        <div>
+            <label>Email</label>
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Enter Your email" th:value="${users.email}" required>
+        </div>
+    </table>
+    <br>
+    <div class="btn">
+        <input type="submit" name="submit" value="Update" onclick="update()">
+    </div>
+</form>
+</body>
+<script type="text/javascript" src="/functions.js"></script>
+
+</html>
