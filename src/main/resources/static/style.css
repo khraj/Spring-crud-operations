@@ -63,3 +63,11 @@ td,tr{
 .roles{
     text-transform: uppercase;
 }
+/*.navbar li .logout a{
+	text-align:right
+}*/
+
+/*
+.logout{
+    text-align:right;
+}*/

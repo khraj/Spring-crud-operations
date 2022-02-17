@@ -7,7 +7,7 @@ function update(){
 }
 
 function signup(){
-  alert("signed Up Successfully...!);
+  alert("signed Up Successfully...!")
 }
 
 var deleteLinks = document.querySelectorAll('.delete');

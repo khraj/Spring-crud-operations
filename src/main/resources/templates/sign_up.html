@@ -2,13 +2,15 @@
 <html lang="en" xmlns:th="http:/www.thymeleaf.com">
 <head>
     <meta charset="UTF-8">
-    <title>Add Student</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
 <h1 align="center">Sign Up</h1>
 <nav class="navbar">
     <li><a href="/">Home</a></li>
+
+
 </nav>
 <br>
 <br>
@@ -16,7 +18,7 @@
 <form th:action="@{/sign_up}" method="post"; style="text-align: center;" autocomplete="off">
     <table class="table">
         <div>
-            <label>USER ID</label>
+            <label>User ID</label>
             <div>
                 <input type="text" name="userId" placeholder="Enter Your UserID" required>
             </div>
@@ -31,13 +33,13 @@
             <label>Password</label>
         </div>
         <div>
-            <input type="text" name="password" placeholder="Enter Your password" required>
+            <input type="password" name="password" placeholder="Enter Your password" required>
         </div>
         <div>
             <label>Email</label>
         </div>
         <div>
-            <input type="text" name="email" placeholder="Enter Your email" required>
+            <input type="email" name="email" placeholder="Enter Your email" required pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}">
         </div>
     </table>
     <br>

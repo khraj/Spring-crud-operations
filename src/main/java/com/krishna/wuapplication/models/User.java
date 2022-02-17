@@ -1,5 +1,8 @@
 package com.krishna.wuapplication.models;
 
+import com.sun.istack.NotNull;
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -7,8 +10,11 @@ import java.util.Set;
 public class User {
     @Id
     private int userId;
+    @NotNull
     private String username;
+    @NotNull
     private String password;
+    @NotNull
     private String email;
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",joinColumns = @JoinColumn(name = "userId"),inverseJoinColumns = @JoinColumn(name = "roleId"))
