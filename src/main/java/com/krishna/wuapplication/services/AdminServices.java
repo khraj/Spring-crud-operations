@@ -1,6 +1,5 @@
 package com.krishna.wuapplication.services;
 
-import com.krishna.wuapplication.models.Student;
 import com.krishna.wuapplication.models.User;
 import com.krishna.wuapplication.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

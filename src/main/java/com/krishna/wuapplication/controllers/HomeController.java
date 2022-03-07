@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -37,6 +38,11 @@ public class HomeController {
         model.addAttribute("student",student);
         logger.info("student list...!");
         return "index";
+    }
+    @GetMapping({"/hello"})
+    @ResponseBody
+    public String Jwt(){
+        return "jwt_success";
     }
     @GetMapping("/addStudent")
     public String addStudent(){
@@ -82,5 +88,10 @@ public class HomeController {
         logger.warn("Student deleted successfully...!");
         return "redirect:/";
     }
+    /*@RequestMapping("user")
+    @ResponseBody
+    public Principal user(Principal principal){
+        return principal;
+    }*/
 
 }

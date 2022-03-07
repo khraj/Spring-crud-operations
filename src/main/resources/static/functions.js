@@ -23,3 +23,36 @@ for (var i = 0; i < deleteLinks.length; i++) {
       }
   });
 }
+
+/*function isempty(){
+    let userId=document.getElementById("userId").value;
+    let username=document.getElementById("username").value;
+    let password=document.getElementById("password").value;
+    let email=document.getElementById("email").value;
+
+    if(username != "" && password!="" userId != "" && email !=""){
+        document.getElementById("btn").removeAttribute("disabled");
+    }
+}*/
+
+
+/*
+(function() {
+$('form > input').keyup(function() {
+    var empty = false;
+    $('form > input').each(function() {
+        if ($(this).val() == '')
+        {
+            empty = true;
+        }
+    });
+    if (empty)
+    {
+        $('#register').attr('disabled', 'disabled');
+    }
+   else
+    {
+        $('#register').removeAttr('disabled');
+    }
+});
+})()*/
