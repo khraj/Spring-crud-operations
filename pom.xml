@@ -78,11 +78,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		!--<dependency>
 			<groupId>com.krishna</groupId>
 			<artifactId>wuapplication</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency>--!
         <dependency>
             <groupId>au.com.dius.pact.core</groupId>
             <artifactId>matchers</artifactId>
